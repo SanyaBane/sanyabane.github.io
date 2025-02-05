@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { AllModsDetailedInfoData } from "../data/ModDetailedInfo";
+import SpellIcons from "./SpellIcons";
 import "./ModDetails.css";
 
 const ModDetails = () => {
@@ -20,16 +21,7 @@ const ModDetails = () => {
     </div>
   );
 
-  const spellIcons = (
-    <div className="spellicons-container">
-      <p className="spellicons-text">Spell icons:</p>
-      <div className="spellicons-images">
-        {modDetailedInfoData.spellIcons.map((spellIcon, index) => (
-          <img className="spellicon-image" key={`spellIcon_${index}`} src={spellIcon.image} alt="image" />
-        ))}
-      </div>
-    </div>
-  );
+  const spellIcons = modDetailedInfoData.spellIcons && <SpellIcons spellIcons={modDetailedInfoData.spellIcons} />
 
   const loadoutImages = (
     <div className="loadoutImages-container">
