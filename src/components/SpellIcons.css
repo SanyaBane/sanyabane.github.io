@@ -17,5 +17,7 @@
 .spellicon-image {
   margin-left: 20px;
   width: 86px;
-  min-width: 32px;
+  max-width: 100%;
+  height: auto;
+  min-width: 0;
 }
