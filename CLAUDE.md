@@ -74,9 +74,40 @@ public/mods_data/<mod_id>/
   loadout/ , ingame/ , video/         # screenshots / clips
 ```
 
-SVGs imported in code (e.g. the Discord icon in `App.tsx`) use
+SVGs imported in code (e.g. the Discord icon in `Header.tsx`) use
 `vite-plugin-svgr`'s `?react` suffix to import them as React components; those live
 in `src/assets/`.
+
+## Styling and design system
+
+Styling is plain CSS imported per component (`import "./Foo.css"`) — **no CSS
+Modules and no Tailwind** (App.tsx once used Tailwind-looking class names that
+resolved to nothing). Because there are no modules, **class names are global and
+leak across files**: e.g. `.root-container` is declared in both `ModList.css` and
+`ModDetails.css` and both rules apply on both pages. Keep class names
+component-specific, and remember a selector you add affects every matching element
+site-wide.
+
+Design tokens live in `:root` in [src/index.css](src/index.css): the font stack,
+fluid type (`--fs-*` via `clamp()`), spacing/radius, colors (`--color-*`), elevation
+(`--shadow-*`) and `--transition`. Component CSS consumes `var(--…)` — **use tokens,
+not literals**.
+
+Dark theme is a `@media (prefers-color-scheme: dark)` block in index.css that
+overrides **only the color/elevation tokens** (`color-scheme: light dark` is set);
+everything else follows automatically. So any new color you introduce **must be a
+token**, or it won't adapt to dark mode.
+
+Responsive: the mobile breakpoint is **`max-width: 480px`** (cards shrink to ~3 per
+row; the header collapses its Discord label to just the icon) — reuse it. Detail-page
+gallery images are fluid (`max-width: 100%; height: auto; min-width: 0`); don't
+reintroduce fixed px widths without a max, or they overflow on phones.
+
+App shell: [src/App.tsx](src/App.tsx) renders a global `<Header />` above
+`<main class="app-main">` inside `.app-shell` (a `min-height: 100vh` flex column;
+styles in [src/App.css](src/App.css)). Page content gets its top gap from
+`.app-main` padding-top. **There is no footer** — the Discord link lives only in the
+header.
 
 ## Gotchas
 
@@ -86,7 +117,9 @@ in `src/assets/`.
   [src/components/ImageGallery.tsx](src/components/ImageGallery.tsx) renders a titled
   row of images; its look is driven entirely by consumer-supplied class names.
   `SpellIcons` and the loadout/in-game sections in `ModDetails` all delegate to it,
-  so change gallery markup there rather than duplicating it.
+  so change gallery markup there rather than duplicating it. Pass `zoomable` to make
+  images open in the full-screen [Lightbox](src/components/Lightbox.tsx) (used by the
+  loadout/in-game sections, not the small spell icons).
 - **`LazyClickableVideo` exists but nothing renders it yet.**
   [src/components/LazyClickableVideo.tsx](src/components/LazyClickableVideo.tsx) is a
   working lazy click-to-play video component, but no data feeds it — the video
