@@ -22,11 +22,16 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   box-shadow: var(--shadow-card);
+  background-color: var(--color-surface);
   width: 144px;
+  transition: transform var(--transition), box-shadow var(--transition),
+    border-color var(--transition);
 }
 
 .clickable-container:hover {
-  background-color: var(--color-accent);
+  transform: translateY(-4px);
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-card-hover);
 }
 
 .image-container {
@@ -54,6 +59,7 @@
   font-style: normal;
   font-weight: bold;
   text-align: center;
+  color: var(--color-text);
   font-size: 120%;
   margin-top: 0px;
   margin-bottom: 0px;
