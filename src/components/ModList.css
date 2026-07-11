@@ -67,3 +67,19 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+/* On small screens shrink the cards (and their spacing) so more fit per row. */
+@media (max-width: 480px) {
+  .mods-list {
+    gap: 12px;
+  }
+
+  .clickable-container {
+    width: 104px;
+    padding: 8px;
+  }
+
+  .hero-name {
+    font-size: 100%;
+  }
+}
