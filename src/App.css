@@ -13,16 +13,15 @@
 }
 
 .footer {
-    display: flex;
-    justify-content: center; /* Centers horizontally */
-    align-items: center; /* Centers vertically */
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
   margin-top: 60px;
 }
 
 .footer-content {
   text-align: center;
 }
-
 
 .footer-discord-icon-container {
   text-align: center;
@@ -33,8 +32,8 @@
   background-color: orange;
 }
 
-.footer-text{
-    margin: 0px;
+.footer-text {
+  margin: 0px;
 }
 
 .footer-discord-icon {

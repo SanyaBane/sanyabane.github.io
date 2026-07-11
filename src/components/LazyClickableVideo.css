@@ -1,12 +1,3 @@
-/*
-.main-lazy-load {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    text-align: center;
-}
-*/
-
 .lazy-load-image-container {
   position: relative;
   display: flex;
