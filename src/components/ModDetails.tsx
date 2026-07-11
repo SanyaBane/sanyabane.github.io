@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import { Download } from "lucide-react";
 import { AllModsDetailedInfoData } from "../data/ModDetailedInfo";
 import SpellIcons from "./SpellIcons";
 import ImageGallery from "./ImageGallery";
@@ -17,9 +18,9 @@ const ModDetails = () => {
 
   const downloadLink = (
     <div className="downloadlink-container">
-      <p className="downloadlink-header">Download link:</p>
-      <a className="downloadlink-link" href={modDetailedInfoData.downloadLink} target="_blank" rel="noreferrer">
-        <p className="downloadlink-text">Download</p>
+      <a className="downloadlink-button" href={modDetailedInfoData.downloadLink} target="_blank" rel="noreferrer">
+        <Download className="downloadlink-icon" size={20} aria-hidden="true" />
+        Download
       </a>
     </div>
   );
