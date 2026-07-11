@@ -38,16 +38,8 @@ const ModDetails = () => {
       </div>
       {downloadLink}
       {spellIcons}
-      <ImageGallery
-        title="Loadout:"
-        images={modDetailedInfoData.loadoutImages.map((loadoutImage) => loadoutImage.image)}
-        className="loadoutImages"
-      />
-      <ImageGallery
-        title="In game:"
-        images={modDetailedInfoData.ingameImages.map((ingameImage) => ingameImage.image)}
-        className="ingameImages"
-      />
+      <ImageGallery title="Loadout:" images={modDetailedInfoData.loadoutImages} className="loadoutImages" />
+      <ImageGallery title="In game:" images={modDetailedInfoData.ingameImages} className="ingameImages" />
     </div>
   );
 };
