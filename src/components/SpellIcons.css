@@ -19,17 +19,3 @@
   width: 86px;
   min-width: 32px;
 }
-
-.spells-video-main {
-  margin-top: 20px;
-}
-
-.spells-video-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  /*
-    text-align: center;
-    */
-}
