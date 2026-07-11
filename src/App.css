@@ -11,3 +11,34 @@
 .app-main {
   flex: 1 0 auto;
 }
+
+.footer {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+  margin-top: 60px;
+}
+
+.footer-content {
+  text-align: center;
+}
+
+
+.footer-discord-icon-container {
+  text-align: center;
+  padding: 5px;
+}
+
+.footer-discord-icon-container:hover {
+  background-color: orange;
+}
+
+.footer-text{
+    margin: 0px;
+}
+
+.footer-discord-icon {
+  width: 64px;
+  height: 64px;
+  fill: #5865f2;
+}
