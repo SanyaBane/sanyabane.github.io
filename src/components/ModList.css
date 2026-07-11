@@ -11,7 +11,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: var(--gap);
   padding: 10px;
 }
 
@@ -19,14 +19,14 @@
   text-decoration: none;
   color: inherit;
   padding: 10px;
-  border: 1px solid hsl(0, 0%, 80%);
-  border-radius: 10px;
-  box-shadow: 5px 5px 5px hsla(0, 0%, 0%, 0.1);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
   width: 144px;
 }
 
 .clickable-container:hover {
-  background-color: rgb(238, 226, 57);
+  background-color: var(--color-accent);
 }
 
 .image-container {
@@ -50,7 +50,7 @@
 }
 
 .hero-name {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: var(--font-sans);
   font-style: normal;
   font-weight: bold;
   text-align: center;

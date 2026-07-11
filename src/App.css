@@ -39,5 +39,5 @@
 .footer-discord-icon {
   width: 64px;
   height: 64px;
-  fill: #5865f2;
+  fill: var(--color-discord);
 }

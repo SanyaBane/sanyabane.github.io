@@ -1,8 +1,36 @@
-/* --- Global base ---------------------------------------------------------
-   The app had no reset or base typography: the body fell back to the browser
-   default (8px margin, Times New Roman), while components set "Gill Sans"
-   ad hoc. Establish a consistent baseline that matches that intended font and
-   pins the light appearance the layout already assumed. */
+/* --- Design tokens -------------------------------------------------------
+   Single place for the site's typography, shape, color and elevation. Values
+   here match the previous hard-coded ones (no visual change on introduction);
+   later polish and the dark theme adjust these variables rather than scattered
+   literals. */
+:root {
+  /* Typography */
+  --font-sans: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+
+  /* Shape & spacing */
+  --radius: 10px;
+  --gap: 20px;
+
+  /* Color (light) */
+  --color-bg: #ffffff;
+  --color-surface: #ffffff;
+  --color-text: #1a1a1a;
+  --color-muted: #6b6b76;
+  --color-border: hsl(0, 0%, 80%);
+  --color-accent: rgb(238, 226, 57);
+  --color-accent-strong: #f4d000;
+  --color-link: #0066ff;
+  --color-discord: #5865f2;
+
+  /* Elevation */
+  --shadow-card: 5px 5px 5px hsla(0, 0%, 0%, 0.1);
+  --shadow-card-hover: 0 10px 24px hsla(0, 0%, 0%, 0.18);
+
+  /* Motion */
+  --transition: 0.18s ease;
+}
+
+/* --- Global base --------------------------------------------------------- */
 *,
 *::before,
 *::after {
@@ -15,7 +43,7 @@ body {
 }
 
 body {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  color: #1a1a1a;
-  background-color: #ffffff;
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background-color: var(--color-bg);
 }
