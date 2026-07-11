@@ -8,19 +8,21 @@
 }
 
 .mods-list{
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
 }
 
 .clickable-container {
-  display: inline-block;
   text-decoration: none;
   color: inherit;
   padding: 10px;
   border: 1px solid hsl(0, 0%, 80%);
   border-radius: 10px;
   box-shadow: 5px 5px 5px hsla(0, 0%, 0%, 0.1);
-  max-width: 144px;
-  margin: 10px;
+  width: 144px;
 }
 
 .clickable-container:hover {
