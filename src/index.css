@@ -6,6 +6,10 @@
 :root {
   /* Typography */
   --font-sans: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  /* Fluid type: scales with the viewport between the min and max bounds. */
+  --fs-title: clamp(28px, 6vw, 42px);
+  --fs-section: clamp(22px, 4vw, 32px);
+  --fs-header: clamp(20px, 3.5vw, 30px);
 
   /* Shape & spacing */
   --radius: 10px;

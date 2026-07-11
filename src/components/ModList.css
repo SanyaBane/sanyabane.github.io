@@ -3,7 +3,7 @@
 }
 
 .mods-header{
-  font-size: 30px;
+  font-size: var(--fs-header);
   margin: 0px;
 }
 
