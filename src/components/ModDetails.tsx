@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import { Download, ArrowLeft } from "lucide-react";
+import { Download, ChevronLeft } from "lucide-react";
 import { AllModsDetailedInfoData } from "../data/ModDetailedInfo";
 import SpellIcons from "./SpellIcons";
 import ImageGallery from "./ImageGallery";
@@ -34,10 +34,15 @@ const ModDetails = () => {
 
   return (
     <div className="root-container">
-      <div className="title-container">
-        <Link className="back-button-container" to={`/`} aria-label="Back to all mods">
-          <ArrowLeft size={40} strokeWidth={2.5} aria-hidden="true" />
+      <nav className="breadcrumbs" aria-label="Breadcrumb">
+        <Link className="breadcrumbs-up" to="/">
+          <ChevronLeft size={16} aria-hidden="true" />
+          Mods
         </Link>
+        <span className="breadcrumbs-sep" aria-hidden="true">/</span>
+        <span className="breadcrumbs-current" aria-current="page">{heroName}</span>
+      </nav>
+      <div className="title-container">
         <img className="title-image" src={modDetailedInfoData.titleImage} alt={heroName} />
         <p className="title-text">{heroName}</p>
       </div>
