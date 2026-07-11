@@ -2,11 +2,12 @@ import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { AllModsDetailedInfoData } from "../data/ModDetailedInfo";
 import SpellIcons from "./SpellIcons";
+import ImageGallery from "./ImageGallery";
 import "./ModDetails.css";
 
 const ModDetails = () => {
   const { mod_id } = useParams<{ mod_id: string }>();
-  const modDetailedInfoData = AllModsDetailedInfoData.find((r) => r.mod_id.toString() === mod_id);
+  const modDetailedInfoData = AllModsDetailedInfoData.find((r) => r.mod_id === mod_id);
 
   if (!modDetailedInfoData) {
     return <div>Mod not found</div>;
@@ -23,28 +24,6 @@ const ModDetails = () => {
 
   const spellIcons = modDetailedInfoData.spellIcons && <SpellIcons spellIcons={modDetailedInfoData.spellIcons} />
 
-  const loadoutImages = (
-    <div className="loadoutImages-container">
-      <p className="loadoutImages-text">Loadout:</p>
-      <div className="loadoutImages-images">
-        {modDetailedInfoData.loadoutImages.map((loadoutImage, index) => (
-          <img className="loadoutImages-image" key={`loadoutImag_${index}`} src={loadoutImage.image} alt="image" />
-        ))}
-      </div>
-    </div>
-  );
-
-  const ingameImages = (
-    <div className="ingameImages-container">
-      <p className="ingameImages-text">In game:</p>
-      <div className="ingameImages-images">
-        {modDetailedInfoData.ingameImages.map((ingameImage, index) => (
-          <img className="ingameImages-image" key={`ingameImage_${index}`} src={ingameImage.image} alt="image" />
-        ))}
-      </div>
-    </div>
-  );
-
   return (
     <div className="root-container">
       <div className="title-container">
@@ -59,8 +38,16 @@ const ModDetails = () => {
       </div>
       {downloadLink}
       {spellIcons}
-      {loadoutImages}
-      {ingameImages}
+      <ImageGallery
+        title="Loadout:"
+        images={modDetailedInfoData.loadoutImages.map((loadoutImage) => loadoutImage.image)}
+        className="loadoutImages"
+      />
+      <ImageGallery
+        title="In game:"
+        images={modDetailedInfoData.ingameImages.map((ingameImage) => ingameImage.image)}
+        className="ingameImages"
+      />
     </div>
   );
 };
