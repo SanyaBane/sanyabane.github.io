@@ -1,5 +1,6 @@
 import ModList from "./components/ModList";
 import ModDetails from "./components/ModDetails";
+import Header from "./components/Header";
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import DiscordLogo from "./assets/discord-icon.svg?react";
 import "./App.css";
@@ -23,6 +24,7 @@ const App = () => {
   return (
     <Router>
       <div className="app-shell">
+        <Header />
         <main className="app-main">
           <Routes>
             <Route path="/" element={<ModList />} />
