@@ -11,12 +11,17 @@ GitHub Pages. There is no backend — every mod is static data plus static asset
 ## Commands
 
 ```bash
-npm run dev      # Vite dev server
-npm run build    # tsc -b (typecheck all tsconfig projects) then vite build -> dist/
-npm run lint     # eslint . (flat config in eslint.config.js)
-npm run preview  # serve the built dist/ locally
-npm run deploy   # predeploy runs build, then gh-pages publishes dist/ to GitHub Pages
+npm run dev        # Vite dev server
+npm run build      # tsc -b (typecheck all tsconfig projects) then vite build -> dist/
+npm run lint       # eslint . (flat config in eslint.config.js)
+npm run preview    # serve the built dist/ locally
+npm run check-mods # verify every mod's derived asset files exist under public/
+npm run new-mod -- <mod_id>  # scaffold a mod's asset folders + print a file checklist
+npm run deploy     # predeploy runs check-mods + build, then gh-pages publishes dist/
 ```
+
+Tooling scripts live in [scripts/](scripts) and share [scripts/mods-lib.mjs](scripts/mods-lib.mjs)
+(parses `mods.ts` and derives asset paths — keep it in sync with the builders).
 
 There is no test runner configured. `tsc -b` is the typecheck gate and runs as part
 of `build`; TypeScript is `noEmit` (Vite does the actual transpiling).
@@ -54,11 +59,15 @@ Types live in [src/types/](src/types). `ModDetails` finds its data with
 
 **To add a new mod:**
 1. Add one `ModDefinition` entry to `ModDefinitions` in `mods.ts`.
-2. Drop the assets under `public/mods_data/<mod_id>/` (see asset layout below),
-   naming them to match the derived paths (`npc_dota_hero_<heroInternalName>*`,
-   one spellicon per `abilities[]` codename, `loadout/1.jpg`, `ingame/1.jpg`, …).
+2. Run `npm run new-mod -- <mod_id>` — it creates the asset folder skeleton and
+   prints the exact list of files to drop under `public/mods_data/<mod_id>/`
+   (see asset layout below). Fill them in.
+3. Run `npm run check-mods` to confirm nothing is missing or misnamed.
 
-The builders derive every path; you no longer edit two files or repeat `mod_id`.
+The builders derive every asset path from the entry, so you no longer edit two
+files or repeat `mod_id`. Asset paths are just strings (TypeScript can't check
+them), so a typo would otherwise be a silent broken image — `check-mods` catches
+it, and runs on `predeploy` so a broken mod can't ship.
 
 ### Assets
 
