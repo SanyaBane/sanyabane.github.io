@@ -11,7 +11,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "check-mods": "node scripts/check-mods.mjs"
+    "check-mods": "node scripts/check-mods.mjs",
+    "new-mod": "node scripts/new-mod.mjs"
   },
   "dependencies": {
     "gh-pages": "^6.3.0",
