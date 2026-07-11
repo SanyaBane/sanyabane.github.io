@@ -16,9 +16,9 @@ const ModDetails = () => {
   const downloadLink = (
     <div className="downloadlink-container">
       <p className="downloadlink-header">Download link:</p>
-      <Link className="downloadlink-link" to={modDetailedInfoData.downloadLink}>
-        <p className="downloadlink-text">{modDetailedInfoData.downloadLink}</p>
-      </Link>
+      <a className="downloadlink-link" href={modDetailedInfoData.downloadLink} target="_blank" rel="noreferrer">
+        <p className="downloadlink-text">Download</p>
+      </a>
     </div>
   );
 
