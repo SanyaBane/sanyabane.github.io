@@ -26,26 +26,40 @@
   text-decoration: underline;
 }
 
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 14px;
+  padding: 0 4px 10px;
+}
+
+.breadcrumbs-up {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  color: var(--color-muted);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.breadcrumbs-up:hover {
+  color: var(--color-accent-strong);
+}
+
+.breadcrumbs-sep {
+  color: var(--color-muted);
+}
+
+.breadcrumbs-current {
+  color: var(--color-text);
+}
+
 .title-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative; /* Allows absolute positioning for the back button */
   width: 100%; /* Ensures full width */
-}
-
-.back-button-container {
-  position: absolute;
-  left: 0; /* Pushes it to the leftmost side */
-  display: flex;
-  align-items: center; /* Centers content inside */
-  padding: 5px;
-  color: var(--color-text);
-  transition: color var(--transition);
-}
-
-.back-button-container:hover {
-  color: var(--color-accent-strong);
 }
 
 .title-image {
