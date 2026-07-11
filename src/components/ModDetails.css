@@ -100,11 +100,11 @@
 .loadoutImages-images {
   display: flex;
   justify-content: center;
+  gap: 20px;
   margin-top: 6px;
 }
 
 .loadoutImages-image {
-  margin-left: 20px;
   width: 1024px;
   max-width: 100%;
   height: auto;
@@ -124,11 +124,11 @@
 .ingameImages-images {
   display: flex;
   justify-content: center;
+  gap: 20px;
   margin-top: 6px;
 }
 
 .ingameImages-image {
-  margin-left: 20px;
   width: 1024px;
   max-width: 100%;
   height: auto;
