@@ -19,7 +19,6 @@ const LazyClickableVideo = ({ videoSrc, thumbnailSrc }: { videoSrc: string; thum
     }
   };
 
-  // <video controls />
   return (
     <LazyLoad>
       <div className="main-lazy-load">
