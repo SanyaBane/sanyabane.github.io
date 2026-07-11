@@ -6,9 +6,12 @@ type ImageGalleryProps = {
   images: string[];
   className: string;
   imageClassName?: string;
+  /** Descriptive base for each image's alt text; falls back to the title. */
+  alt?: string;
 };
 
-const ImageGallery = ({ title, images, className, imageClassName }: ImageGalleryProps) => {
+const ImageGallery = ({ title, images, className, imageClassName, alt }: ImageGalleryProps) => {
+  const altBase = alt ?? title;
   return (
     <div className={`${className}-container`}>
       <p className={`${className}-text`}>{title}</p>
@@ -18,7 +21,7 @@ const ImageGallery = ({ title, images, className, imageClassName }: ImageGallery
             className={imageClassName ?? `${className}-image`}
             key={`${className}_${index}`}
             src={image}
-            alt={title}
+            alt={`${altBase} ${index + 1}`}
           />
         ))}
       </div>

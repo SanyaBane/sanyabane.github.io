@@ -13,6 +13,8 @@ const ModDetails = () => {
     return <div>Mod not found</div>;
   }
 
+  const heroName = modDetailedInfoData.modSelectionInfoProps?.heroName ?? "";
+
   const downloadLink = (
     <div className="downloadlink-container">
       <p className="downloadlink-header">Download link:</p>
@@ -22,7 +24,7 @@ const ModDetails = () => {
     </div>
   );
 
-  const spellIcons = modDetailedInfoData.spellIcons && <SpellIcons spellIcons={modDetailedInfoData.spellIcons} />
+  const spellIcons = modDetailedInfoData.spellIcons && <SpellIcons spellIcons={modDetailedInfoData.spellIcons} heroName={heroName} />
 
   return (
     <div className="root-container">
@@ -33,13 +35,13 @@ const ModDetails = () => {
             <path d="M12 5l-7 7 7 7"></path>
           </svg>
         </Link>
-        <img className="title-image" src={modDetailedInfoData.titleImage} alt="image" />
-        <p className="title-text">{modDetailedInfoData.modSelectionInfoProps?.heroName}</p>
+        <img className="title-image" src={modDetailedInfoData.titleImage} alt={heroName} />
+        <p className="title-text">{heroName}</p>
       </div>
       {downloadLink}
       {spellIcons}
-      <ImageGallery title="Loadout:" images={modDetailedInfoData.loadoutImages} className="loadoutImages" />
-      <ImageGallery title="In game:" images={modDetailedInfoData.ingameImages} className="ingameImages" />
+      <ImageGallery title="Loadout:" images={modDetailedInfoData.loadoutImages} className="loadoutImages" alt={`${heroName} loadout`} />
+      <ImageGallery title="In game:" images={modDetailedInfoData.ingameImages} className="ingameImages" alt={`${heroName} in-game`} />
     </div>
   );
 };

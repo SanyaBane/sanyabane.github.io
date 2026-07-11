@@ -6,8 +6,8 @@ const ModSelectionCard = ({ mod_id, heroName, moddedHeroSelectionImage, original
     <Link to={`/mod/${mod_id}`}>
       <div className="clickable-container">
         <div className="image-container">
-          <img src={moddedHeroSelectionImage} alt="Hero Selection Image" className="main-image" />
-          <img src={originalHeroMiniImage} alt="Original Hero Mini Image" className="overlay-image" />
+          <img src={moddedHeroSelectionImage} alt={heroName} className="main-image" />
+          <img src={originalHeroMiniImage} alt={`${heroName} (original)`} className="overlay-image" />
         </div>
         <p className="hero-name">{heroName}</p>
       </div>
