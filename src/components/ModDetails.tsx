@@ -11,7 +11,12 @@ const ModDetails = () => {
   const modDetailedInfoData = AllModsDetailedInfoData.find((r) => r.mod_id === mod_id);
 
   if (!modDetailedInfoData) {
-    return <div>Mod not found</div>;
+    return (
+      <div className="not-found">
+        <p className="not-found-title">Mod not found</p>
+        <Link className="not-found-link" to="/">Back to all mods</Link>
+      </div>
+    );
   }
 
   const heroName = modDetailedInfoData.modSelectionInfoProps?.heroName ?? "";
