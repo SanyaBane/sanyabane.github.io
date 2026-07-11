@@ -1,3 +1,25 @@
+/* --- Global base ---------------------------------------------------------
+   The app had no reset or base typography: the body fell back to the browser
+   default (8px margin, Times New Roman), while components set "Gill Sans"
+   ad hoc. Establish a consistent baseline that matches that intended font and
+   pins the light appearance the layout already assumed. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: #1a1a1a;
+  background-color: #ffffff;
+}
+
 .footer {
     display: flex;
     justify-content: center; /* Centers horizontally */
