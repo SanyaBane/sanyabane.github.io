@@ -1,0 +1,13 @@
+/* Full-height column so the footer sits at the bottom even on short pages.
+   Previously App.tsx used Tailwind-style classes (flex flex-col min-h-screen /
+   flex-grow) that were never defined — the project has no Tailwind — so the
+   layout did nothing and the footer just trailed the content. */
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-main {
+  flex: 1 0 auto;
+}

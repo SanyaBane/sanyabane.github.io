@@ -2,6 +2,7 @@ import ModList from "./components/ModList";
 import ModDetails from "./components/ModDetails";
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import DiscordLogo from "./assets/discord-icon.svg?react";
+import "./App.css";
 
 const Footer = () => {
   return (
@@ -21,8 +22,8 @@ const Footer = () => {
 const App = () => {
   return (
     <Router>
-      <div className="flex flex-col min-h-screen">
-        <main className="flex-grow">
+      <div className="app-shell">
+        <main className="app-main">
           <Routes>
             <Route path="/" element={<ModList />} />
             <Route path="/mod/:mod_id" element={<ModDetails />} />
