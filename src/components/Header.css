@@ -1,0 +1,72 @@
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-surface);
+}
+
+.site-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.site-brand-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 7px;
+  background-color: var(--color-accent);
+  color: var(--color-on-accent);
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.site-header-discord {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  transition: background-color var(--transition), color var(--transition);
+}
+
+.site-header-discord:hover {
+  background-color: var(--color-accent);
+  color: var(--color-on-accent);
+}
+
+.site-header-discord-icon {
+  width: 24px;
+  height: 24px;
+  fill: var(--color-discord);
+}
+
+@media (max-width: 480px) {
+  .site-header {
+    padding: 10px 14px;
+  }
+
+  .site-brand {
+    font-size: 16px;
+  }
+
+  /* Icon-only Discord on phones to save room (link keeps its aria-label). */
+  .site-header-discord-label {
+    display: none;
+  }
+}

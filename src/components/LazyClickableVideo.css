@@ -1,0 +1,21 @@
+.lazy-load-image-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content; /* Adjust as needed */
+  cursor: pointer;
+}
+
+.lazy-load-image-play-button {
+  position: absolute;
+  color: white;
+  stroke-width: 2px;
+  width: 60px;
+  height: 60px;
+}
+
+.lazy-load-video,
+.lazy-load-image {
+  width: 500px;
+}

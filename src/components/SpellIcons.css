@@ -1,0 +1,23 @@
+.spellicons-text {
+  font-family: var(--font-sans);
+  font-style: normal;
+  font-weight: normal;
+  text-align: center;
+  font-size: var(--fs-section);
+  margin: 0;
+  margin-top: 8px;
+}
+
+.spellicons-images {
+  display: flex;
+  justify-content: center;
+  gap: var(--gap);
+  margin-top: 6px;
+}
+
+.spellicon-image {
+  width: 86px;
+  max-width: 100%;
+  height: auto;
+  min-width: 0;
+}

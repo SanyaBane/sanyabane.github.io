@@ -1,32 +1,65 @@
-.root-container{
+.root-container {
   text-align: center;
+}
+
+.not-found {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.not-found-title {
+  font-family: var(--font-sans);
+  font-weight: bold;
+  font-size: var(--fs-section);
+  color: var(--color-text);
+  margin: 0 0 16px;
+}
+
+.not-found-link {
+  display: inline-block;
+  color: var(--color-link);
+  font-family: var(--font-sans);
+  text-decoration: none;
+}
+
+.not-found-link:hover {
+  text-decoration: underline;
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 14px;
+  padding: 0 4px 10px;
+}
+
+.breadcrumbs-up {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  color: var(--color-muted);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.breadcrumbs-up:hover {
+  color: var(--color-accent-strong);
+}
+
+.breadcrumbs-sep {
+  color: var(--color-muted);
+}
+
+.breadcrumbs-current {
+  color: var(--color-text);
 }
 
 .title-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative; /* Allows absolute positioning for the back button */
   width: 100%; /* Ensures full width */
-}
-
-.back-button-container {
-  position: absolute;
-  left: 0; /* Pushes it to the leftmost side */
-  display: flex;
-  align-items: center; /* Centers content inside */
-  padding: 5px;
-}
-
-.back-button-container svg {
-  stroke: #333;
-  transition: stroke 0.1s;
-  /*width:36px;*/
-  height: 48px;
-}
-
-.back-button-container:hover svg {
-  stroke: #0066ff;
 }
 
 .title-image {
@@ -36,11 +69,11 @@
 }
 
 .title-text {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: var(--font-sans);
   font-style: normal;
   font-weight: bold;
   text-align: center;
-  font-size: 42px;
+  font-size: var(--fs-title);
   margin: 0;
   margin-left: 30px;
   white-space: nowrap;
@@ -51,70 +84,42 @@
 .downloadlink-container {
   margin-top: 20px;
   margin-bottom: 20px;
-  background-color: rgb(225, 188, 255);
   text-align: center;
-  padding-left: 10px;
-  padding-top: 0px;
-  padding-right: 10px;
-  padding-bottom: 10px;
 }
 
-.downloadlink-header {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-style: normal;
+.downloadlink-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: var(--radius);
+  background-color: var(--color-accent);
+  color: var(--color-on-accent);
+  font-family: var(--font-sans);
   font-weight: bold;
-  text-align: center;
-  font-size: 28px;
-  margin: 0;
+  font-size: 18px;
+  text-decoration: none;
+  box-shadow: var(--shadow-card);
+  transition: background-color var(--transition), transform var(--transition),
+    box-shadow var(--transition);
 }
 
-.downloadlink-link {
-  text-align: center;
+.downloadlink-button:hover {
+  background-color: var(--color-accent-strong);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card-hover);
 }
 
-.downloadlink-text {
-  width: 100%;
-  margin: 0;
-  padding: 5px;
-  font-size: 16px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  background-color: aquamarine;
-}
-
-.downloadlink-text:hover {
-  background-color: #ffee00;
-}
-
-.spellicons-text {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  text-align: center;
-  font-size: 32px;
-  margin: 0;
-  margin-top: 8px;
-}
-
-.spellicons-images {
-  display: flex;
-  justify-content: center;
-  margin-top: 6px;
-}
-
-.spellicon-image {
-  margin-left: 20px;
-  width: 86px;
-  min-width: 32px;
+.downloadlink-icon {
+  flex-shrink: 0;
 }
 
 .loadoutImages-text {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: var(--font-sans);
   font-style: normal;
   font-weight: normal;
   text-align: center;
-  font-size: 32px;
+  font-size: var(--fs-section);
   margin: 0;
   margin-top: 8px;
 }
@@ -122,43 +127,23 @@
 .loadoutImages-images {
   display: flex;
   justify-content: center;
+  gap: var(--gap);
   margin-top: 6px;
 }
 
 .loadoutImages-image {
-  margin-left: 20px;
-  width: 1024px;
-  min-width: 256px;
-}
-
-.loadoutImages-text {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  text-align: center;
-  font-size: 32px;
-  margin: 0;
-  margin-top: 8px;
-}
-
-.loadoutImages-images {
-  display: flex;
-  justify-content: center;
-  margin-top: 6px;
-}
-
-.loadoutImages-image {
-  margin-left: 20px;
-  width: 1024px;
-  min-width: 256px;
+  width: 600px;
+  max-width: 100%;
+  height: auto;
+  min-width: 0;
 }
 
 .ingameImages-text {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: var(--font-sans);
   font-style: normal;
   font-weight: normal;
   text-align: center;
-  font-size: 32px;
+  font-size: var(--fs-section);
   margin: 0;
   margin-top: 8px;
 }
@@ -166,11 +151,13 @@
 .ingameImages-images {
   display: flex;
   justify-content: center;
+  gap: var(--gap);
   margin-top: 6px;
 }
 
 .ingameImages-image {
-  margin-left: 20px;
-  width: 1024px;
-  min-width: 256px;
+  width: 600px;
+  max-width: 100%;
+  height: auto;
+  min-width: 0;
 }

@@ -1,0 +1,12 @@
+/* Full-height column so the page background fills the viewport even when the
+   content is short. */
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-main {
+  flex: 1 0 auto;
+  padding-top: 20px;
+}
