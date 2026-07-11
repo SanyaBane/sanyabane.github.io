@@ -43,8 +43,8 @@ const ModDetails = () => {
       </div>
       {downloadLink}
       {spellIcons}
-      <ImageGallery title="Loadout:" images={modDetailedInfoData.loadoutImages} className="loadoutImages" alt={`${heroName} loadout`} />
-      <ImageGallery title="In game:" images={modDetailedInfoData.ingameImages} className="ingameImages" alt={`${heroName} in-game`} />
+      <ImageGallery title="Loadout:" images={modDetailedInfoData.loadoutImages} className="loadoutImages" alt={`${heroName} loadout`} zoomable />
+      <ImageGallery title="In game:" images={modDetailedInfoData.ingameImages} className="ingameImages" alt={`${heroName} in-game`} zoomable />
     </div>
   );
 };
