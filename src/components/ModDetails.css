@@ -16,17 +16,12 @@
   display: flex;
   align-items: center; /* Centers content inside */
   padding: 5px;
+  color: var(--color-text);
+  transition: color var(--transition);
 }
 
-.back-button-container svg {
-  stroke: #333;
-  transition: stroke 0.1s;
-  /*width:36px;*/
-  height: 48px;
-}
-
-.back-button-container:hover svg {
-  stroke: #0066ff;
+.back-button-container:hover {
+  color: var(--color-accent-strong);
 }
 
 .title-image {
