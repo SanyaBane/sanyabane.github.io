@@ -5,12 +5,13 @@
   "homepage": "https://sanyabane.github.io/sanyabane.github.io",
   "type": "module",
   "scripts": {
-    "predeploy": "npm run build",
+    "predeploy": "npm run check-mods && npm run build",
     "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "check-mods": "node scripts/check-mods.mjs"
   },
   "dependencies": {
     "gh-pages": "^6.3.0",
